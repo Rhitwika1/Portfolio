@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .live {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #ff758c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Design Showcase</h1>
+        <span class="live">LIVE</span>
+    </header>
+    
+    <button class="btn" onclick="showDesigns()">Posters and Designs</button>
+    
+    <div id="designGallery" class="gallery" style="display: none;">
+        <img src="assets\img\R (2).png" alt="Design 1">                
+        <img src="assets\img\participation certificate.png" alt="Design 2">
+        <img src="assets\img\participation certificate (1).png" alt="Design 3">
+        <img src="assets\img\Postman Poster 1 Landscape.png" alt="Design 4">
+        <img src="assets\img\Postman Poster 1 (1).png" alt="Design 5">
+        <img src="assets\img\Holi poster.png" alt="Design 6">
+        <img src="assets\img\Champions 4.png" alt="Design 7">
+        <img src="assets\img\python.png" alt="Design 8">
+        <img src="assets\img\image (1).png" alt="Design 9">
+        <img src="assets\img\Saraswati puja.png" alt="Design 10">
+        <img src="assets\img\SUPRA.png" alt="Design 11">
+        <img src="assets\img\SUPRA and CUPCAKE.png" alt="Design 12">        
+        
+    </div>
+    
+    <script>
+        function showDesigns() {
+            document.getElementById("designGallery").style.display = "grid";
+        }
+    </script>
+</body>
+</html>
