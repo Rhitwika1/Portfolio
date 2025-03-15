@@ -754,6 +754,17 @@ a.back-to-top:hover, a.back-to-top:focus{
     line-height: 80px;
     text-align: center;
 }
+.live {
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+	animation: blink 1s infinite;
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
 .services-item .services-content h3{
 	margin-top: 10px;
 	margin-bottom: 10px;
