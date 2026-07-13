@@ -92,24 +92,49 @@ header{background:rgba(255,255,255,.9);padding:18px;display:flex;justify-content
 </div>
 
 <script>
-function showDesigns(){
- document.getElementById("designGallery").style.display="grid";
-}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const modal=document.getElementById("imageModal");
-const modalImg=document.getElementById("modalImage");
-const closeBtn=document.querySelector(".close");
+    const gallery = document.getElementById("designGallery");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close");
 
-document.addEventListener("click",function(e){
- if(e.target.matches(".gallery img")){
-   modal.style.display="flex";
-   modalImg.src=e.target.src;
- }
+    // Show Gallery
+    window.showDesigns = function () {
+        gallery.style.display = "grid";
+    };
+
+    // Open image popup
+    gallery.querySelectorAll("img").forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+        });
+    });
+
+    // Close popup
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Close when clicking outside image
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // ESC key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+
 });
-
-closeBtn.onclick=()=>modal.style.display="none";
-modal.onclick=(e)=>{if(e.target===modal)modal.style.display="none";}
-document.addEventListener("keydown",(e)=>{if(e.key==="Escape")modal.style.display="none";});
+</script>
 </script>
 </body>
 </html>
